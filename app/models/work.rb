@@ -4,7 +4,7 @@ class Work < ActiveRecord::Base
 	belongs_to :project
 
 	#add validations
-	validates :work_hours, presense: true
-	validates :work_details, presense: true
+	validates :work_hours, presence: true
+	validates :work_details, presence: true
 	validates :work_hours, numericality: {greater_than: 0}	
 end
