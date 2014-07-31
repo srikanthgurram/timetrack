@@ -7,5 +7,7 @@ class Employee < ActiveRecord::Base
 	#add validations
 	validates :first_name, presence: true
 	validates :last_name, presence: true
+	validates :username, uniqueness: true
+	validates :username, length:{ minimum: 5 }
 
 end
