@@ -1,7 +1,7 @@
 class Work < ActiveRecord::Base
 	#add associations
-	belons_to :employee
-	belons_to :project
+	belongs_to :employee
+	belongs_to :project
 
 	#add validations
 	validates :work_hours, presense: true
