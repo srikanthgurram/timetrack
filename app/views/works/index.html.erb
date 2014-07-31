@@ -32,7 +32,7 @@ border-spacing:5px;
 <%@works.each do |w| %>
 <% full_name = w.employee.first_name + " "+ w.employee.last_name %>
 <tr>
-	<td>DATE</td>
+	<td><%= w.date_time_performed %></td>
 	<td><%= full_name %></td>
 	<td><%= w.work_details %></td>
 	<td><%= w.work_hours %></td>
