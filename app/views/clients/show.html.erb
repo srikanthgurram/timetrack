@@ -1,0 +1,6 @@
+<h2>Client Details</h2>
+<hr>
+<p>
+	<strong>Client Name:</strong> <%= (@client != nil) ? @client.name  : "Sorry, no Client is found with that ID" %><br/>
+	<%= link_to "Back to Clients", clients_path %>
+</p>

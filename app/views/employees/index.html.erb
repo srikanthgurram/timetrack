@@ -1,2 +1,13 @@
 <h1>Employees Info</h1>
 <hr>
+<h2>List of all Employees</h2>
+
+<ol>
+<% @employees.each do |e| %>
+	<li>
+	<% full_name = e.first_name + " " + e.last_name %>
+	<%= link_to full_name, e %>	
+	</li>
+<% end %>
+</ol>
+<%= link_to "Home", root_path%>

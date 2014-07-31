@@ -1,0 +1,7 @@
+<h2>Project Details</h2>
+<hr>
+<p>
+	<strong>Project Name:</strong> <%= (@project != nil) ? @project.name  : "Sorry, no Project is found with that ID" %><br/>	
+	<strong>Default Rate:</strong> <%= (@project != nil) ? @project.default_rate  : "Sorry, no Project is found with that ID" %>	<br/>
+	<%= link_to "Back to Projects", projects_path %>	
+</p>

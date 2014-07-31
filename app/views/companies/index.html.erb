@@ -1,2 +1,12 @@
 <h1>Companies information</h1>
 <hr>
+<h2>List of all Companies</h2>
+
+<ol>
+<% @companies.each do |c| %>
+	<li>
+	<%= link_to c.name, c %>	
+	</li>
+<% end %>
+</ol>
+<%= link_to "Home", root_path%>

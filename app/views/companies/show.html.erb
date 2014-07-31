@@ -1,0 +1,6 @@
+<h2>Compnay Details</h2>
+<hr>
+<p>
+	<strong>Company Name:</strong> <%= (@company != nil) ? @company.name : "Sorry, no company is registered with that ID" %><br/>
+	<%= link_to "Back to Companies", companies_path %>	
+</p>

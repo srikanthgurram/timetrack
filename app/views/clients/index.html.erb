@@ -1,2 +1,12 @@
 <h1>Clients Information</h1>
 <hr>
+<h2>List of all Clients</h2>
+
+<ol>
+<% @clients.each do |cl| %>
+	<li>
+	<%= link_to cl.name, cl %>	
+	</li>
+<% end %>
+</ol>
+<%= link_to "Home", root_path%>

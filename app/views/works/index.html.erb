@@ -1,2 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table,th,td
+{
+border:1px solid black;
+border-collapse:collapse;
+}
+th,td
+{
+padding:15px;
+}
+th,td
+{
+text-align:left;
+}
+table
+{
+border-spacing:5px;
+}
+</style>
+</head>
+<body>
 <h1> Works Info</h1>
 <hr>
+<h2> All Works details</h2>
+<table >
+<tr>
+	<th>Date</th><th>Employee</th><th>Work details</th><th>Hours</th>
+</tr>
+<%@works.each do |w| %>
+<% full_name = w.employee.first_name + " "+ w.employee.last_name %>
+<tr>
+	<td>DATE</td>
+	<td><%= full_name %></td>
+	<td><%= w.work_details %></td>
+	<td><%= w.work_hours %></td>
+</tr>
+<%end %>
+</table>
+<%= link_to "Home", root_path%>
+</body>
+</html>

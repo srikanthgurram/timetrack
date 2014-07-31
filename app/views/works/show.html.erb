@@ -1,0 +1,7 @@
+<h2>Work Details</h2>
+<hr>
+<p>
+	<strong>Work details:</strong> <%= (@work != nil) ? @work.work_details  : "Sorry, no Work is found with that ID" %><br/>	
+	<strong>Work hours:</strong> <%= (@work != nil) ? @work.work_hours  : "Sorry, no Work is found with that ID" %>	<br/>
+	<%= link_to "Back to Works", works_path %>	
+</p>
