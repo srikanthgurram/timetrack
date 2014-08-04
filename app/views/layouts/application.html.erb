@@ -7,9 +7,31 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body>	
+<div id="container">
+<head>
+	<nav>
+ 		<ul>
+ 			<% nav_items.each do |nav_item| %>
+ 				<%= display_nav_items( nav_item[:displayname], nav_item[:controllername], nav_item[:linkurl] ) %>
+ 			<% end %>
+ 		</ul>
+ 	</nav>	
+</head>
 
-<%= yield %>
+<section id = "main">
+	<article >
+		<%= yield %>
+	</article>
+	<aside>
+		<%= yield :aside%>
+	</aside>
+</section>
+<footer>
+	---FOOTER-----
+</footer>
+</div>
+
 
 </body>
 </html>
