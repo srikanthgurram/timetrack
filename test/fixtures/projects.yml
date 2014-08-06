@@ -4,8 +4,32 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+amp:
+  name: Amplify Tablets
+  company: caribou
+  client: amplify
+  default_rate: 50
+
+usbcamera:
+  name: USB Camera Scanner
+  company: caribou
+  client: amplify
+  default_rate: 50
+
+servicemagic:
+  name: Service Magic
+  company: caribou
+  client: amplify
+  default_rate: 50
+
+mdmdemoportal:
+  name: MDM Demo Portal
+  company: caribou
+  client: amplify
+  default_rate: 50
+
+usbcharger:
+  name: Multi USB charger
+  company: caribou
+  client: amplify
+  default_rate: 50

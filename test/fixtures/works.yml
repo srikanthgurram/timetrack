@@ -4,8 +4,47 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+srikanth_tt:
+  project: amp
+  employee: gsrikanth
+  work_details: "Deployed latest builds and assigned the tasks "
+  date_time_performed: <%= Time.now - 2.hours %>
+  work_hours: 9
+
+sudhakar_tt: 
+  project: amp
+  employee: rsudhakar
+  work_details: "Regression on QA Master completed and the results were updated"
+  date_time_performed: <%= Time.now - 1.day %>
+  work_hours: 15
+
+nagendra_tt:
+  project: usbcamera
+  employee: vnagendra
+  work_details: "Code checked-in waiting for the tests to be run"
+  date_time_performed: <%= Time.now + 2.hours %>
+  work_hours: 8
+
+manasree_tt:
+  project: servicemagic
+  employee: bmanasree
+  work_details: "Tested ServiceMagic, created new cards for the issues"
+  date_time_performed: <%= Time.now - 2.days %>
+  work_hours: 4
+
+msrikanth_tt:
+  project: mdmdemoportal
+  employee: msrikanth
+  work_details: "Fixed the issues in portal. Portal is up & running now"
+  date_time_performed: <%= Time.now + 2.days %>
+  work_hours: 2
+
+#Dynamic Working hours using ruby code
+<% for n in 1..100 %>
+work_<%= n %>:
+  project: <%= n % 2 != 0 ? 'mdmdemoportal' : 'amp' %>
+  employee: <%= n % 2 == 0 ? 'gsrikanth' : 'vnagendra' %>
+  work_details: <%= "Work on Day #{n}" %>
+  date_time_performed: <%= Time.now - n.days %>
+  work_hours: <%= n + 1 %>
+<% end %>

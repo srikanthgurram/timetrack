@@ -4,8 +4,27 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+gsrikanth:
+  first_name: Srikanth
+  last_name: Gurram
+  company: caribou
+
+rsudhakar:
+  first_name: Sudhakar
+  last_name: Rayi
+  company: caribou
+
+vnagendra:
+  first_name: Nagendra
+  last_name: Varma
+  company: caribou
+
+msrikanth:
+  first_name: Srikanth
+  last_name: Madicharla
+  company: caribou
+
+bmanasree:
+  first_name: Manasree
+  last_name: Bal
+  company: caribou

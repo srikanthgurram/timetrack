@@ -47,13 +47,9 @@
                     <%= yield %>
                 </div>
             </div>
-        </div>
+            </div>
     </section>
 </body>
-
-
-
-
 
 <section id = "main">
 	<article >
@@ -64,23 +60,7 @@
 	</aside>
 </section>
 <footer>
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
-        <div class="container">          
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex2-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
- 					<% nav_items.each do |nav_item| %>
- 						<%= display_nav_items( nav_item[:displayname], nav_item[:controllername], nav_item[:linkurl] ) %>
- 					<% end %>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
 </footer>
 </div>
 

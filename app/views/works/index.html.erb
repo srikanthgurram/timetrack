@@ -22,13 +22,14 @@ border-spacing:5px;
 </style>
 </head>
 <body>
-<h1> Works Info</h1>
+<h3> Works Info</h3>
 <hr>
-<h2> All Works details</h2>
+<h4> All Works details</h4>
 <table >
 <tr>
 	<th>Date</th><th>Employee</th><th>Work details</th><th>Hours</th>
 </tr>
+
 <%@works.each do |w| %>
 <% full_name = w.employee.first_name + " "+ w.employee.last_name %>
 <tr>
@@ -39,5 +40,6 @@ border-spacing:5px;
 </tr>
 <%end %>
 </table>
+	<%= will_paginate @works %>
 </body>
 </html>

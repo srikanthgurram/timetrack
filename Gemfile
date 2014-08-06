@@ -50,4 +50,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+#gem for pagination
+gem 'will_paginate', '~> 3.0'
+
 ruby "2.0.0"
