@@ -2,5 +2,28 @@
 <hr>
 <p>
 	<strong>Client Name:</strong> <%= (@client != nil) ? @client.name  : "Sorry, no Client is found with that ID" %><br/>
-	<%= link_to "Back to Clients", clients_path %>
+
 </p>
+<hr>
+<h4>All the Projects</h4>	
+	
+	<table class="table table-hover">
+    	<thead>
+        <tr>            
+            <th>Project</th>
+            <th>Default Rate</th>
+          </tr>
+    	</thead>
+   	 	<tbody>
+   	 	<% @client_projects.each do |cli_prj| %>	
+        <tr>
+            <td><%= (cli_prj != nil) ? cli_prj.name  : "Sorry, no Work is found with that ID" %></td>
+            <td><%= (cli_prj != nil) ? cli_prj.default_rate  : "Sorry, no Work is found with that ID" %></td>
+          </tr>
+          <% end %>
+        </tbody>
+    </table>
+    
+    <!-- Pagination-->    
+	<%= will_paginate @client_projects %>
+	<%= link_to "Back to Clients", clients_path %>

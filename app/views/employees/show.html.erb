@@ -2,5 +2,6 @@
 <hr>
 <p>
 	<strong>Employee Name:</strong> <%= (@employee != nil) ? @employee.first_name+" "+@employee.last_name  : "Sorry, no Employee is found with that ID" %>	<br/>
-	<%= link_to "Back to Employees", employees_path %>	
+
 </p>
+	<%= link_to "Back to Employees", employees_path %>	

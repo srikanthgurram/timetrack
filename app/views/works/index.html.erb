@@ -1,45 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-table,th,td
-{
-border:1px solid black;
-border-collapse:collapse;
-}
-th,td
-{
-padding:15px;
-}
-th,td
-{
-text-align:left;
-}
-table
-{
-border-spacing:5px;
-}
-</style>
-</head>
-<body>
 <h3> Works Info</h3>
 <hr>
 <h4> All Works details</h4>
-<table >
+<table class="table table table-hover">
 <tr>
-	<th>Date</th><th>Employee</th><th>Work details</th><th>Hours</th>
+	<th>Employee</th><th>Date</th><th>Work details</th><th>Hours</th>
 </tr>
-
 <%@works.each do |w| %>
-<% full_name = w.employee.first_name + " "+ w.employee.last_name %>
+	<% full_name = w.employee.first_name + " "+ w.employee.last_name %>
 <tr>
-	<td><%= w.date_time_performed %></td>
 	<td><%= full_name %></td>
-	<td><%= w.work_details %></td>
+	<td><%= w.date_time_performed.strftime("%a, %d %b %Y") %></td>	
+	<td><%= link_to w.work_details,w %></td>
 	<td><%= w.work_hours %></td>
 </tr>
 <%end %>
+
 </table>
 	<%= will_paginate @works %>
-</body>
-</html>

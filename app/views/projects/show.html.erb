@@ -1,7 +1,34 @@
 <h4>Project Details</h4>
-<hr>
 <p>
 	<strong>Project Name:</strong> <%= (@project != nil) ? @project.name  : "Sorry, no Project is found with that ID" %><br/>	
-	<strong>Default Rate:</strong> <%= (@project != nil) ? @project.default_rate  : "Sorry, no Project is found with that ID" %>	<br/>
-	<%= link_to "Back to Projects", projects_path %>	
+	<strong>Default Rate:</strong> <%= (@project != nil) ? @project.default_rate  : "Sorry, no Project is found with that ID" %>
+	<hr>
+
+	<h4>All the works</h4>	
+	
+	<table class="table table-hover">
+    	<thead>
+        <tr>            
+            <th>Employee</th>
+            <th>Date time</th>
+            <th>Details</th>
+            <th>Hours</th>
+          </tr>
+    	</thead>
+   	 	<tbody>
+   	 	<% @project_works.each do |prj| %>	
+        <tr>
+            <% full_name = prj.employee.first_name + " "+ prj.employee.last_name %>
+               <td><%= (prj != nil) ? full_name  : "Sorry, no Work is found with that ID" %></td>
+            <td><%= (prj != nil) ? prj.date_time_performed  : "Sorry, no Work is found with that ID" %></td>
+            <td><%= (prj != nil) ? prj.work_details  : "Sorry, no Work is found with that ID" %></td>
+            <td><%= (prj != nil) ? prj.work_hours  : "Sorry, no Work is found with that ID" %></td>
+          </tr>
+          <% end %>
+        </tbody>
+    </table>
+
+    <!-- Pagination-->    
+	<%= will_paginate @project_works %>
 </p>
+	<%= link_to "Back to Projects", projects_path %>	

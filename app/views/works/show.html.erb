@@ -1,7 +1,28 @@
 <h4>Work Details</h4>
 <hr>
 <p>
-	<strong>Work details:</strong> <%= (@work != nil) ? @work.work_details  : "Sorry, no Work is found with that ID" %><br/>	
-	<strong>Work hours:</strong> <%= (@work != nil) ? @work.work_hours  : "Sorry, no Work is found with that ID" %>	<br/>
-	<%= link_to "Back to Works", works_path %>	
+
+	<table class="table table table-hover">
+    	<thead>
+        <tr>            
+            <th>Employee</th>
+            <th>Project</th>
+            <th>Date time</th>
+            <th>Details</th>
+            <th>Hours</th>
+          </tr>
+    	</thead>
+   	 	<tbody>
+        <tr>
+            <% full_name = @work.employee.first_name + " "+ @work.employee.last_name %>
+            <td><%= (@work != nil) ? full_name  : "Sorry, no Work is found with that ID" %></td>
+            <td><%= (@work != nil) ? @work.project.name  : "Sorry, no Work is found with that ID" %></td>
+            <td><%= (@work != nil) ? @work.date_time_performed  : "Sorry, no Work is found with that ID" %></td>
+            <td><%= (@work != nil) ? @work.work_details  : "Sorry, no Work is found with that ID" %></td>
+            <td><%= (@work != nil) ? @work.work_hours  : "Sorry, no Work is found with that ID" %></td>
+          </tr>
+        </tbody>
+    </table>
+
 </p>
+	<%= link_to "Back to Works", works_path %>	
