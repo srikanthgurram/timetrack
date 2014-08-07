@@ -19,7 +19,7 @@
    	 	<% @project_works.each do |prj| %>	
         <tr>
             <% full_name = prj.employee.first_name + " "+ prj.employee.last_name %>
-               <td><%= (prj != nil) ? full_name  : "Sorry, no Work is found with that ID" %></td>
+            <td><%= (prj != nil) ? (link_to full_name, prj.employee)  : "Sorry, no Work is found with that ID" %></td>
             <td><%= (prj != nil) ? prj.date_time_performed  : "Sorry, no Work is found with that ID" %></td>
             <td><%= (prj != nil) ? prj.work_details  : "Sorry, no Work is found with that ID" %></td>
             <td><%= (prj != nil) ? prj.work_hours  : "Sorry, no Work is found with that ID" %></td>

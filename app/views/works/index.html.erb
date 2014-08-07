@@ -3,13 +3,14 @@
 <h4> All Works details</h4>
 <table class="table table table-hover">
 <tr>
-	<th>Employee</th><th>Date</th><th>Work details</th><th>Hours</th>
+	<th>Employee</th><th>Project</th><th>Date</th><th>Work details</th><th>Hours</th>
 </tr>
 <%@works.each do |w| %>
 	<% full_name = w.employee.first_name + " "+ w.employee.last_name %>
 <tr>
-	<td><%= full_name %></td>
-	<td><%= w.date_time_performed.strftime("%a, %d %b %Y") %></td>	
+	<td><%= link_to full_name, w.employee %></td>
+	<td><%= link_to w.project.name, w.project %></td>
+	<td><%= w.date_time_performed.strftime("%d %b %Y") %></td>
 	<td><%= link_to w.work_details,w %></td>
 	<td><%= w.work_hours %></td>
 </tr>

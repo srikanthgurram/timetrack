@@ -15,8 +15,8 @@
    	 	<tbody>
         <tr>
             <% full_name = @work.employee.first_name + " "+ @work.employee.last_name %>
-            <td><%= (@work != nil) ? full_name  : "Sorry, no Work is found with that ID" %></td>
-            <td><%= (@work != nil) ? @work.project.name  : "Sorry, no Work is found with that ID" %></td>
+            <td><%= (@work != nil) ? (link_to full_name, @work.employee)  : "Sorry, no Work is found with that ID" %></td>
+            <td><%= (@work != nil) ? (link_to @work.project.name, @work.project)  : "Sorry, no Work is found with that ID" %></td>
             <td><%= (@work != nil) ? @work.date_time_performed  : "Sorry, no Work is found with that ID" %></td>
             <td><%= (@work != nil) ? @work.work_details  : "Sorry, no Work is found with that ID" %></td>
             <td><%= (@work != nil) ? @work.work_hours  : "Sorry, no Work is found with that ID" %></td>
@@ -25,4 +25,4 @@
     </table>
 
 </p>
-	<%= link_to "Back to Works", works_path %>	
+	<br/><%= link_to "Back to Works", works_path %>	

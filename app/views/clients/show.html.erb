@@ -17,7 +17,7 @@
    	 	<tbody>
    	 	<% @client_projects.each do |cli_prj| %>	
         <tr>
-            <td><%= (cli_prj != nil) ? cli_prj.name  : "Sorry, no Work is found with that ID" %></td>
+            <td><%= (cli_prj != nil) ? (link_to cli_prj.name, cli_prj)  : "Sorry, no Work is found with that ID" %></td>
             <td><%= (cli_prj != nil) ? cli_prj.default_rate  : "Sorry, no Work is found with that ID" %></td>
           </tr>
           <% end %>
@@ -26,4 +26,4 @@
     
     <!-- Pagination-->    
 	<%= will_paginate @client_projects %>
-	<%= link_to "Back to Clients", clients_path %>
+	<br/><%= link_to "Back to Clients", clients_path %>
