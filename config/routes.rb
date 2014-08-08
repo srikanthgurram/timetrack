@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'employee/:slug' => 'employees#show'
   get 'employees/:id/work' => 'employees#work'
   get 'projects/:id/works' => 'projects#works'
+  get 'welcome' => 'companies#welcome'
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
