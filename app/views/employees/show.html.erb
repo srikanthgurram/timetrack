@@ -5,36 +5,9 @@
 	<strong>First Name:</strong> <%= (@employee != nil) ? @employee.first_name : "Sorry, no Employee is found with that ID" %><br/>
 	<strong>Last Name:</strong> <%= (@employee != nil) ? @employee.last_name : "Sorry, no Employee is found with that ID"%><br/>
 	<strong>User Name:</strong> <%= (@employee != nil) ? @employee.username : "Sorry, no Employee is found with that ID"%><br/>
-
-
+	<strong>Work: </strong> <%= (@employee != nil) ? (link_to "Details", {:controller => 'employees', :action => 'work'}) : "Sorry, no Employee is found with that ID"%><br/>
+	<hr>
 </p>
+	
 
-<strong>Work Details</strong>
-	<table class="table table-hover">
-    	<thead>
-        <tr>            
-            <th>Employee</th>
-            <th>Project</th>
-            <th>Client</th>
-            <th>Date time</th>
-            <th>Details</th>
-            <th>Hours</th>
-          </tr>
-    	</thead>
-   	 	<tbody>
-   	 	<% @employee_works.each do |emp_work| %>	
-        <tr>
-        	<td><%= (emp_work != nil) ? emp_work.employee.first_name+" "+emp_work.employee.last_name : "Sorry, no Work is found with that ID" %></td>
-			<td><%= (emp_work != nil) ? (link_to emp_work.project.name, emp_work.project)  : "Sorry, no Work is found with that ID" %></td>
-			<td><%= (emp_work != nil) ? (link_to emp_work.project.client.name, emp_work.project.client)  : "Sorry, no Work is found with that ID" %></td>			
-            <td><%= (emp_work != nil) ? emp_work.date_time_performed  : "Sorry, no Work is found with that ID" %></td>
-            <td><%= (emp_work != nil) ? emp_work.work_details  : "Sorry, no Work is found with that ID" %></td>
-            <td><%= (emp_work != nil) ? emp_work.work_hours  : "Sorry, no Work is found with that ID" %></td>
-          </tr>
-          <% end %>
-        </tbody>
-    </table>
-
-    <!-- Pagination-->    
-	<%= will_paginate @employee_works %>
 	<br/><%= link_to "Back to Employees", employees_path %>	
