@@ -1,0 +1,22 @@
+%h4 Client Details
+%hr
+%p
+  %strong Client Name:
+  = @client.name
+  %br
+%hr
+%h4 All the Projects  
+%table.table.table-hover
+  %thead
+    %tr
+      %th Project
+      %th Default Rate
+  %tbody
+  - @client_projects.each do |cli_prj|
+    %tr
+      %td= link_to cli_prj.name, cli_prj
+      %td= cli_prj.default_rate
+
+= will_paginate @client_projects
+%br
+= link_to "Back to Clients", clients_path

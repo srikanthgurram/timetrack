@@ -1,6 +1,6 @@
-%h3 Companies information
+%h3 Companies Information
 %hr
 %h4 List of all Companies
-%ol
-- @companies.each do |company|
-  %li= link_to company.name, company	
+%ul
+  - @companies.each do |company|
+    %li= link_to company.name, company
