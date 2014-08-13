@@ -1,19 +1,29 @@
 class ProjectsController < ApplicationController
-	def index
-		@projects = Project.all
-	end
+  def index
+    @projects = Project.all
+  end
 
-	def show
-		if (params[:id])
-			@project = Project.exists?(params[:id]) ? Project.find(params[:id]) : nil
-		end
-	end
+  #Show controller
+  def show
+    if (params[:id])
+      if Project.exists?(params[:id])
+        @project =  Project.find(params[:id])
+      else
+       render :"errors/notfound"      
+      end
+    end
+  end
 
-	def works
-		if (params[:id])
-			@project = Project.exists?(params[:id]) ? Project.find(params[:id]) : nil
-			@project_works = @project.works.paginate(:page => params[:page], :per_page => 10)
-			#render :works
-		end
-	end
+  #Works controller
+  def works
+    if (params[:id])
+      if Project.exists?(params[:id])
+        @project = Project.find(params[:id])
+        @project_works = @project.works.paginate(:page => params[:page], :per_page => 10)
+      else
+        render :"errors/notfound"
+      end
+    end
+  end
+
 end

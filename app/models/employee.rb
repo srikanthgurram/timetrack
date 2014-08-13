@@ -10,4 +10,11 @@ class Employee < ActiveRecord::Base
 	validates :username, uniqueness: true
 	validates :username, length:{ minimum: 5 }
 
+	def username_exists?
+		Employee.where(:username => nil) ? false : true
+	end
+
+	def to_s
+		first_name+" "+last_name
+	end
 end

@@ -1,0 +1,6 @@
+%h3 Companies information
+%hr
+%h4 List of all Companies
+%ol
+- @companies.each do |company|
+  %li= link_to company.name, company	

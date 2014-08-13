@@ -4,19 +4,30 @@ class EmployeesController < ApplicationController
 	end
 
 	def show
-		if (params[:id])
-			@employee = Employee.exists?(params[:id]) ? Employee.find(params[:id]) : (render :new)
-		elsif(params[:slug])
-			@employee = (Employee.find_by username: params[:slug])? (Employee.find_by username: params[:slug]): nil
-			@employee_works = @employee.works.paginate(:page => params[:page], :per_page => 10)
+		if params[:id]
+			if Employee.exists?(params[:id])
+				@employee =  Employee.find(params[:id])
+			else
+			 render :new
+			end 
+		elsif params[:slug]
+			if Employee.find_by username: params[:slug]
+				@employee = Employee.find_by username: params[:slug]
+				@employee_works = @employee.works.paginate(:page => params[:page], :per_page => 10)
+			else
+				render :"errors/notfound"
+			end
 		end
 	end
 
 	def work
-		if(params[:id])
-			@employee = Employee.exists?(params[:id]) ? Employee.find(params[:id]) : nil
-			@employee_works = @employee.works.paginate(:page => params[:page], :per_page => 10)
-			#render :work
+		if params[:id]
+			if Employee.exists?(params[:id])
+				@employee = Employee.find(params[:id])
+				@employee_works = @employee.works.paginate(:page => params[:page], :per_page => 10)
+			else
+				render :"errors/notfound"
+			end
 		end
 	end
 end

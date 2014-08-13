@@ -4,6 +4,6 @@
 	<strong>Default Rate:</strong> <%= (@project != nil) ? @project.default_rate  : "Sorry, no Project is found with that ID" %><br/> 
   <strong>All the work done:</strong> 
         <%= (@project != nil) ? (link_to "Details", {:controller => 'projects', :action => 'works'})  : "Sorry, no Project is found with that ID" %><br/>
-	<hr>
+	<hr>  
 </p>
 	<%= link_to "Back to Projects", projects_path %>	

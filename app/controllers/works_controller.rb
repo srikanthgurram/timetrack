@@ -5,7 +5,11 @@ class WorksController < ApplicationController
 
 	def show
 		if (params[:id])
-			@work = Work.exists?(params[:id]) ? Work.find(params[:id]) : nil
-		end
+      if(Work.exists?(params[:id]))
+			 @work =  Work.find(params[:id])
+      else
+        render :"errors/notfound"
+      end
+    end
 	end
 end

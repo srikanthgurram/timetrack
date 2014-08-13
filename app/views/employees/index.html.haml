@@ -1,0 +1,6 @@
+%h3 Employees Info
+%hr
+%h4 List of all Employees
+%ol
+  - @employees.each do |employee|
+    %li= link_to employee, employee

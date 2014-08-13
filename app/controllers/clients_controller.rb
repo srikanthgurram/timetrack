@@ -5,8 +5,12 @@ class ClientsController < ApplicationController
 
 	def show
 		if (params[:id])
-			@client = Client.exists?(params[:id]) ? Client.find(params[:id]) : nil
-			@client_projects = @client.projects.paginate(:page => params[:page], :per_page => 10)
+      if Client.exists?(params[:id])
+        @client =  Client.find(params[:id])
+        @client_projects = @client.projects.paginate(:page => params[:page], :per_page => 10)
+      else
+        render :"errors/notfound"
+      end
 		end
 	end
 

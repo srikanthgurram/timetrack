@@ -52,5 +52,5 @@ gem 'spring',        group: :development
 
 #gem for pagination
 gem 'will_paginate', '~> 3.0'
-
+gem "haml"
 ruby "2.0.0"

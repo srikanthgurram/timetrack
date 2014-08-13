@@ -1,0 +1,20 @@
+.panel.panel-default
+  .panel-heading All the Works
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Employee
+        %th Date time
+        %th Details
+        %th Hours
+    %tbody
+    - @project_works.each do |prj|
+      %tr
+        %td= prj.employee
+        %td= prj.date_time_performed
+        %td= prj.work_details
+        %td= prj.work_hours
+
+= will_paginate @project_works 
+%br
+= link_to "Back to Project details", @project
