@@ -1,0 +1,20 @@
+%h4 Work Details
+%hr
+%table.table.table-hover
+  %thead
+    %tr
+      %th Employee
+      %th Project
+      %th Date time
+      %th Details
+      %th Hours  
+  %tbody
+    %tr
+      %td= link_to @work.employee, @work.employee
+      %td= link_to @work.project.name, @work.project
+      %td= @work.date_time_performed
+      %td= @work.work_details
+      %td= @work.work_hours
+
+%br
+= link_to "Back to Works", works_path

@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
 
   #Show controller
   def show
-    if (params[:id])
+    if params[:id]
       if Project.exists?(params[:id])
         @project =  Project.find(params[:id])
       else

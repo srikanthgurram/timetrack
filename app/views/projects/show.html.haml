@@ -1,0 +1,14 @@
+%h4 Project Details
+%p
+  %ul
+    %li
+      %strong Project Name: 
+      #{@project.name}
+    %li
+      %strong Default Rate: 
+      #{@project.default_rate}
+    %li
+      %strong All the work done: 
+      #{link_to "Details", {:controller => 'projects', :action => 'works'}}
+
+= link_to "Back to Projects", projects_path
