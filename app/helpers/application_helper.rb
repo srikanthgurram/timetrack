@@ -26,9 +26,9 @@ module ApplicationHelper
 			linkurl: works_path
 		},
 		{
-			displayname: "Others",
-			controllername: 'others',
-			linkurl: 'others_path'
+			displayname: "Contact Us",
+			controllername: 'contactus',
+			linkurl: 'contactus_path'
 		}
 
 
