@@ -11,4 +11,5 @@
       %strong All the work done: 
       #{link_to "Details", {:controller => 'projects', :action => 'works'}}
 
-= link_to "Back to Projects", projects_path
+- content_for(:aside) do
+  = render "sidebar"

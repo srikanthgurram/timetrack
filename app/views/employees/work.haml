@@ -1,14 +1,14 @@
 %strong Work Details
-  %table.table.table-hover
-    %thead
-      %tr
-        %th Employee
-        %th Project
-        %th Client
-        %th Date time
-        %th Details
-        %th Hours
-    %tbody
+%table.table.table-hover
+  %thead
+    %tr
+      %th Employee
+      %th Project
+      %th Client
+      %th Date time
+      %th Details
+      %th Hours
+  %tbody
     - @employee_works.each do |emp_work|
       %tr
         %td= link_to emp_work.employee,emp_work.employee
@@ -19,5 +19,6 @@
         %td= emp_work.work_hours
         
 = will_paginate @employee_works
-%br
-= link_to "Back to Employee details",@employee
+
+- content_for(:aside) do
+  = render "sidebar"

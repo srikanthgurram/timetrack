@@ -19,4 +19,6 @@
 
 = will_paginate @client_projects
 %br
-= link_to "Back to Clients", clients_path
+
+- content_for :aside do
+  = render "sidebar"

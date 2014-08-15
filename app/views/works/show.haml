@@ -16,5 +16,5 @@
       %td= @work.work_details
       %td= @work.work_hours
 
-%br
-= link_to "Back to Works", works_path
+- content_for(:aside) do
+  = render "sidebar"

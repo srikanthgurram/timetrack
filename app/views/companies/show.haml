@@ -5,4 +5,5 @@
   = @company.name
   
 %br
-= link_to "Back to Companies", companies_path
+- content_for :aside do
+  = render "sidebar"
