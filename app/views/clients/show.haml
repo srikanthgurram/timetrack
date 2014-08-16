@@ -12,13 +12,8 @@
       %th Project
       %th Default Rate
   %tbody
-  - @client_projects.each do |cli_prj|
-    %tr
-      %td= link_to cli_prj.name, cli_prj
-      %td= cli_prj.default_rate
-
+    = render partial: "projects/project", collection: @client_projects
 = will_paginate @client_projects
-%br
 
 - content_for :aside do
   = render "sidebar"

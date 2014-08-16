@@ -2,5 +2,4 @@
 %hr
 %h4 List of all Clients
 %ul
-  - @clients.each do |client|
-    %li= link_to client.name, client
+  = render partial: "client", collection: @clients

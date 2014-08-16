@@ -1,6 +1,10 @@
 %h3 Projects Information
 %hr
-%h4 List of all Projects
-%ul
-  - @projects.each do |project|
-    %li= link_to project.name, project
+%h4 All Projects
+%table.table.table-hover
+  %thead
+    %tr
+      %th Project
+      %th Default Rate
+  %tbody
+    = render partial: "project", collection: @projects

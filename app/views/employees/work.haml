@@ -8,7 +8,7 @@
       %th Date time
       %th Hours
   %tbody
-    = render partial: "works/work", collection: @employee_works    
+    = render partial: "works/works", collection: @employee_works    
 = will_paginate @employee_works
 
 - content_for(:aside) do
