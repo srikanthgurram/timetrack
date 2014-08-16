@@ -6,18 +6,9 @@
       %th Project
       %th Client
       %th Date time
-      %th Details
       %th Hours
   %tbody
-    - @employee_works.each do |emp_work|
-      %tr
-        %td= link_to emp_work.employee,emp_work.employee
-        %td= link_to emp_work.project.name, emp_work.project
-        %td= link_to emp_work.project.client.name, emp_work.project.client
-        %td= emp_work.date_time_performed
-        %td= emp_work.work_details
-        %td= emp_work.work_hours
-        
+    = render partial: "works/work", collection: @employee_works    
 = will_paginate @employee_works
 
 - content_for(:aside) do
