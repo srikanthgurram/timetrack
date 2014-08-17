@@ -1,11 +1,11 @@
 !!! 5
 %html
-  %head
-    %title Timetracker2
+  %head    
     %meta{:name => "viewport", :content => "width=device-width,initial-scale=1"}
     = stylesheet_link_tag "application", :media => "all", :data => {:turbolinks_track => true}
     = javascript_include_tag "application", :data => {:turbolinks_track => true}
     = csrf_meta_tags
+    = yield :head
 
 
 -# <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
