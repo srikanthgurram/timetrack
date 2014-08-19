@@ -7,9 +7,7 @@ class EmployeesController < ApplicationController
 		if params[:id]
 			if Employee.exists?(params[:id])
 				@employee =  Employee.find(params[:id])
-			else
-			 render :new
-			end 
+			end
 		elsif params[:slug]
 			if Employee.find_by username: params[:slug]
 				@employee = Employee.find_by username: params[:slug]
@@ -29,5 +27,9 @@ class EmployeesController < ApplicationController
 				render :"errors/notfound"
 			end
 		end
+	end
+
+	def new
+		@employee = Employee.new
 	end
 end

@@ -1,1 +1,12 @@
-%h2 Do you want to add new employee?
+%h1 Sign up
+.row
+  .span6.offset3
+    = form_tag do
+
+      = label_tag :first_name
+      = text_field_tag :first_name
+
+      = label_tag :last_name
+      = text_field_tag :last_name
+
+      = submit_tag "Create my account", class: "btn btn-large btn-primary"
