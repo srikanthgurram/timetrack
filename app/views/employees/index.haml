@@ -6,3 +6,6 @@
 %h4 List of all Employees
 %ul
   = render partial: "employ", collection: @employees
+
+- content_for(:aside) do
+  = render "sidebar"

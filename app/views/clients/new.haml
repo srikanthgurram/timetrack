@@ -1,0 +1,10 @@
+%h1 Add new Client
+.row
+  .span6.offset3
+    = form_for(@client) do |c|
+      = c.label :name
+      = c.text_field :name
+      = c.submit "Add", class: "btn btn-large btn-primary"
+
+- content_for(:aside) do
+  = render "sidebar"

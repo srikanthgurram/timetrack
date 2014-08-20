@@ -25,4 +25,7 @@ class CompaniesController < ApplicationController
     #render file: "README.rdoc", content_type: "application/rss"
   end
 
+  def new
+    @company = Company.new
+  end
 end

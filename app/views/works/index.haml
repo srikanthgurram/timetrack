@@ -13,3 +13,6 @@
 
   = render partial: "works", collection: @works
 = will_paginate @works
+
+- content_for(:aside) do
+  = render "sidebar"

@@ -6,3 +6,6 @@
 %h4 List of all Clients
 %ul
   = render partial: "client", collection: @clients
+
+- content_for(:aside) do
+  = render "sidebar"

@@ -1,0 +1,10 @@
+%h1 Add new Company
+.row
+  .span6.offset3
+    = form_for(@company) do |f|
+      = f.label :name
+      = f.text_field :name
+      = f.submit "Add", class: "btn btn-large btn-primary"
+
+- content_for(:aside) do
+  = render "sidebar"

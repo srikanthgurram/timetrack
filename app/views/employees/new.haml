@@ -1,12 +1,15 @@
-%h1 Sign up
+%h1 Add new Employee
 .row
   .span6.offset3
-    = form_tag do
+    = form_for(@employee) do |e|
+      
+      = e.label :first_name
+      = e.text_field :first_name
 
-      = label_tag :first_name
-      = text_field_tag :first_name
+      = e.label :last_name
+      = e.text_field :last_name
 
-      = label_tag :last_name
-      = text_field_tag :last_name
+      = e.submit "Add", class: "btn btn-large btn-primary"
 
-      = submit_tag "Create my account", class: "btn btn-large btn-primary"
+- content_for(:aside) do
+  = render "sidebar"
