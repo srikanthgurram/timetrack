@@ -1,3 +1,9 @@
+= if @company.errors.any?
+  %p Please fix the following #{pluralize(@company.errors.count, "error")}
+  %ul
+    - @company.errors.full_messages.each do |error|
+      %li= error
+
 %h1 Add new Company
 .row
   .span6.offset3

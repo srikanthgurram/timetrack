@@ -38,7 +38,6 @@ class CompaniesController < ApplicationController
       flash[:notice] = "Successfully created Company"
       redirect_to @company
     else
-      flash[:notice] = @company.errors.messages
       render 'new'
     end
   end
