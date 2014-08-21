@@ -18,6 +18,7 @@ class EmployeesController < ApplicationController
 		end
 	end
 
+	#Controller to get the Employee work details
 	def work
 		if params[:id]
 			if Employee.exists?(params[:id])
@@ -29,7 +30,21 @@ class EmployeesController < ApplicationController
 		end
 	end
 
+	#Controller to add new Employee
 	def new
 		@employee = Employee.new
+	end
+
+	#Controller to save new Employee record
+	def create
+		@employee = Employee.new(params[:employee].permit(:company_id, :first_name, :last_name, :username))
+		if @employee.valid?
+			@employee.save
+			flash[:notice] = "Successfully added new Employee"
+			redirect_to @employee
+		else
+			flash[:notice] = @employee.errors.messages
+			redirect_to @employee
+		end
 	end
 end

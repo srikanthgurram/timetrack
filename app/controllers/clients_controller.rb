@@ -14,7 +14,21 @@ class ClientsController < ApplicationController
       end
     end
 
+    #Controller to add new Client
     def new
       @client = Client.new
+    end
+
+    #Controller to save new Client
+    def create
+      @client = Client.new(params[:client].permit(:name, :comapny_id))
+      if @client.valid?
+        @client.save
+        flash[:notice] = "Successfully added new client"
+        redirect_to @client
+      else
+        flash[:notice] = @client.errors.messages
+        redirect_to @client
+      end
     end
 end

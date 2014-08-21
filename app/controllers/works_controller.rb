@@ -13,8 +13,22 @@ class WorksController < ApplicationController
     end
   end
 
+  #Contoller to add new Work
   def new
     @work = Work.new
+  end
+  
+  #Controller to sav new Work
+  def create
+    @work = Work.new(params[:work].permit(:employee_id, :project_id, :work_hours, :work_details, :date_time_performed))
+    if @work.valid?
+      @work.save
+      flash[:notice] = 'Successfully added new work details'
+      redirect_to @work
+    else
+      flash[:notice] = @work.errors.messages
+      redirect_to @work
+    end
   end
   
 end

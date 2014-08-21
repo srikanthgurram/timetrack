@@ -25,7 +25,21 @@ class CompaniesController < ApplicationController
     #render file: "README.rdoc", content_type: "application/rss"
   end
 
+  #Controller to add new Company
   def new
     @company = Company.new
+  end
+
+  #Controller to save new Company
+  def create
+    @company = Company.new(params[:company].permit(:name))
+    if @company.valid?
+      @company.save
+      flash[:notice] = "Successfully created Company"
+      redirect_to @company
+    else
+      flash[:notice] = @company.errors.messages
+      redirect_to @company
+    end
   end
 end

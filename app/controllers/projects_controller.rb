@@ -26,8 +26,22 @@ class ProjectsController < ApplicationController
     end
   end
 
+  #Controller to add new Project
   def new
     @project = Project.new
+  end 
+
+  #Controller to save the new Project
+  def create
+    @project = Project.new(params[:project].permit(:name, :default_rate, :company_id, :client_id))
+    if @project.valid?
+      @project.save
+      flash[:notice] = "Successfully created new Project"
+      redirect_to @project
+    else
+      flash[:notice] = @project.errors.messages
+      redirect_to @project
+    end
   end
-  
+
 end
