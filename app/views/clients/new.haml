@@ -1,8 +1,8 @@
-= if @client.errors.any?
+- if @client.errors.any?
   %p Please fix the following #{pluralize(@client.errors.count, "error")}
-  %ol
-    - @client.errors.messages.each do |message|
-      %li= message
+  %ul
+  - @client.errors.full_messages.each do |msg|
+    %li= msg
 
 %h1 Add new Client
 .row

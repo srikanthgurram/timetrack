@@ -9,6 +9,7 @@ class Employee < ActiveRecord::Base
 	validates :last_name, presence: true
 	validates :username, uniqueness: true
 	validates :username, length:{ minimum: 5 }
+	validates :company, presence: true
 
 	def username_exists?
 		Employee.where(:username => nil) ? false : true

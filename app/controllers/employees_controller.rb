@@ -43,7 +43,6 @@ class EmployeesController < ApplicationController
 			flash[:notice] = "Successfully added new Employee"
 			redirect_to @employee
 		else
-			flash[:notice] = @employee.errors.messages
 			render 'new'
 		end
 	end

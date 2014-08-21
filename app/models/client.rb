@@ -6,4 +6,5 @@ class Client < ActiveRecord::Base
 	#add validations
 	validates :name, presence: true
 	validates :name, uniqueness: true
+  validates :company, presence: true
 end

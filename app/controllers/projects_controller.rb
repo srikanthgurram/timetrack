@@ -39,7 +39,6 @@ class ProjectsController < ApplicationController
       flash[:notice] = "Successfully created new Project"
       redirect_to @project
     else
-      flash[:notice] = @project.errors.messages
       render 'new'
     end
   end
