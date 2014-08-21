@@ -27,7 +27,7 @@ class WorksController < ApplicationController
       redirect_to @work
     else
       flash[:notice] = @work.errors.messages
-      redirect_to @work
+      render 'new'
     end
   end
   

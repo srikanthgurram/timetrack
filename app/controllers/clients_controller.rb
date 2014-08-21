@@ -28,7 +28,7 @@ class ClientsController < ApplicationController
         redirect_to @client
       else
         flash[:notice] = @client.errors.messages
-        redirect_to @client
+        render 'new'
       end
     end
 end

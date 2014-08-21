@@ -39,7 +39,7 @@ class CompaniesController < ApplicationController
       redirect_to @company
     else
       flash[:notice] = @company.errors.messages
-      redirect_to @company
+      render 'new'
     end
   end
 end

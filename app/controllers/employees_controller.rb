@@ -44,7 +44,7 @@ class EmployeesController < ApplicationController
 			redirect_to @employee
 		else
 			flash[:notice] = @employee.errors.messages
-			redirect_to @employee
+			render 'new'
 		end
 	end
 end

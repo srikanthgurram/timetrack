@@ -40,7 +40,7 @@ class ProjectsController < ApplicationController
       redirect_to @project
     else
       flash[:notice] = @project.errors.messages
-      redirect_to @project
+      render 'new'
     end
   end
 
