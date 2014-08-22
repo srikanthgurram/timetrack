@@ -1,8 +1,9 @@
 - if @client.errors.any?
-  %p Please fix the following #{pluralize(@client.errors.count, "error")}
-  %ul
-  - @client.errors.full_messages.each do |msg|
-    %li= msg
+  .alert.alert-danger{:role => "alert"}
+    %p Please fix the following #{pluralize(@client.errors.count, "error")}
+    %ul
+      - @client.errors.full_messages.each do |msg|
+        %li= msg
 
 %h1 Add new Client
 .row

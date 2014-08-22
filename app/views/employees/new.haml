@@ -1,8 +1,9 @@
 -if @employee.errors.any?
-  %p Please fix the following #{pluralize(@employee.errors.count, "error")}:
-  %ul
-  - @employee.errors.full_messages.each do |msg|
-    %li= msg
+  .alert.alert-danger{:role => "alert"}
+    %p Please fix the following #{pluralize(@employee.errors.count, "error")}:
+    %ul
+      - @employee.errors.full_messages.each do |msg|
+        %li= msg
 
 %h1 Add new Employee
 .row

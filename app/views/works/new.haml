@@ -1,8 +1,9 @@
 -if @work.errors.any?
-  %p Please fix the following #{pluralize(@work.errors.count, "error")}:
-  %ul
-  - @work.errors.full_messages.each do |msg|
-    %li= msg
+  .alert.alert-danger{:role => "alert"}
+    %p Please fix the following #{pluralize(@work.errors.count, "error")}:
+    %ul
+      - @work.errors.full_messages.each do |msg|
+        %li= msg
 
 %h1 Add work details
 .row

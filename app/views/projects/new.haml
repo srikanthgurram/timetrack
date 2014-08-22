@@ -1,8 +1,9 @@
 -if @project.errors.any?
-  %p Please fix the following #{pluralize(@project.errors.count, "error")}:
-  %ul
-  - @project.errors.full_messages.each do |msg|
-    %li= msg
+  .alert.alert-danger{:role => "alert"}
+    %p Please fix the following #{pluralize(@project.errors.count, "error")}:
+    %ul
+      - @project.errors.full_messages.each do |msg|
+        %li= msg
 
 %h1 Add new Company
 .row
