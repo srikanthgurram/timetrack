@@ -1,3 +1,6 @@
+- content_for :head do
+  %title Add new Employee
+
 -if @employee.errors.any?
   .alert.alert-danger{:role => "alert"}
     %p Please fix the following #{pluralize(@employee.errors.count, "error")}:
