@@ -21,13 +21,30 @@ class ClientsController < ApplicationController
 
     #Controller to save new Client
     def create
-      @client = Client.new(params[:client].permit(:name, :comapny_id))
+      @client = Client.new(params[:client].permit(:name, :company_id))
       if @client.valid?
         @client.save
         flash[:notice] = "Successfully added new client"
         redirect_to @client
       else
         render 'new'
+      end
+    end
+
+    #Edit client
+    def edit
+      @client = Client.find(params[:id])
+    end
+
+    #Update client records
+    def update
+      @client = Client.find(params[:id])
+
+      if @client.update(params[:client].permit(:name, :company_id))
+        flash[:notice] = "Successfully updated the client"
+        redirect_to @client
+      else
+        render 'edit'
       end
     end
 end

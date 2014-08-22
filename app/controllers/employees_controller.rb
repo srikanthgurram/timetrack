@@ -46,4 +46,20 @@ class EmployeesController < ApplicationController
 			render 'new'
 		end
 	end
+
+	#Edit employee controller
+	def edit
+		@employee = Employee.find(params[:id])
+	end
+
+	#Update employee records
+	def update
+		@employee = Employee.find(params[:id])
+		if @employee.update(params[:employee].permit(:company_id, :first_name, :last_name, :username))
+			flash[:notice] = "Successfully Updated Employee details"
+			redirect_to @employee
+		else
+			render 'edit'
+		end
+	end
 end

@@ -43,4 +43,19 @@ class ProjectsController < ApplicationController
     end
   end
 
+  #Edit Project
+  def edit
+    @project = Project.find(params[:id])
+  end
+
+  #Update Project details
+  def update
+    @project = Project.find(params[:id])
+    if @project.update(params[:project].permit(:name, :default_rate, :company_id, :client_id))
+      flash[:notice] = "Successfully Updated Project details"
+      redirect_to @project
+    else
+      render 'edit'
+    end
+  end
 end

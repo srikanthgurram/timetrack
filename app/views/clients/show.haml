@@ -3,10 +3,14 @@
 
 %h4 Client Details
 %hr
+%p= link_to "Edit Client", edit_client_path(@client)
 %p
-  %strong Client Name:
+  %strong Client:
   = @client.name
-  %br
+%p
+  %strong Company
+  = @client.company.name  
+
 %hr
 %h4 All the Projects  
 %table.table.table-hover

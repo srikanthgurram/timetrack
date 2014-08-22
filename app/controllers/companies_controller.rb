@@ -35,10 +35,26 @@ class CompaniesController < ApplicationController
     @company = Company.new(params[:company].permit(:name))
     if @company.valid?
       @company.save
-      flash[:notice] = "Successfully created Company"
+      flash[:notice] = "Successfully updated Company"
       redirect_to @company
     else
       render 'new'
     end
   end
+
+  #Cotnroller to edit
+  def edit
+    @company = Company.find(params[:id])
+  end
+
+  def update
+    @company = Company.find(params[:id])
+    if @company.update(params[:company].permit(:name))
+      flash[:notice] = "Successfully updated Company"
+      redirect_to @company
+    else
+      render 'edit'
+    end
+  end
+
 end
