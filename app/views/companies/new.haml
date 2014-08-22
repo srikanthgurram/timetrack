@@ -1,20 +1,10 @@
+-#Head section
 - content_for :head do
   %title Add new Company
 
-- if @company.errors.any?
-  .alert.alert-danger{:role => "alert"}
-    %p Please fix the following #{pluralize(@company.errors.count, "error")}
-    %ul
-      - @company.errors.full_messages.each do |msg|
-        %li= msg
+-#Form
+= render "form"
 
-%h1 Add new Company
-.row
-  .span6.offset3
-    = form_for(@company) do |f|
-      = f.label :name
-      = f.text_field :name
-      = f.submit "Add", class: "btn btn-large btn-primary"
-
+-#Sidebar
 - content_for(:aside) do
   = render "sidebar"

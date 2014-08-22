@@ -1,25 +1,10 @@
+-#Head section
 - content_for :head do
   %title Edit #{@client.name} work details
 
-- if @client.errors.any?
-  .alert.alert-danger{:role => "alert"}
-    %p Please fix the following #{pluralize(@client.errors.count, "error")}
-    %ul
-      - @client.errors.full_messages.each do |msg|
-        %li= msg
+-#Form
+= render "form"
 
-%h1 Update Client info
-.row
-  .span6.offset3
-    = form_for(@client) do |c|
-      %div
-        = c.label :name, 'Client Name'
-        = c.text_field :name
-      %div
-        = c.label :company_id
-        = c.collection_select(:company_id, Company.all.order('name'), :id, :name, prompt: true)
-      %div
-        = c.submit "Update", class: "btn btn-large btn-primary"
-
+-#Sidebar
 - content_for(:aside) do
   = render "sidebar"
