@@ -4,12 +4,14 @@
 %h4 Client Details
 %hr
 %p= link_to "Edit Client", edit_client_path(@client)
+%p= link_to "Delete Client", @client, :method => "delete", data: { confirm: "Are You sure?" }
+
 %p
   %strong Client:
   = @client.name
 %p
   %strong Company
-  = @client.company.name  
+  = @client.company.name
 
 %hr
 %h4 All the Projects  

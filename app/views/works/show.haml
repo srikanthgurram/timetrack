@@ -4,6 +4,7 @@
 %h4 Work Details
 %hr
 %p= link_to "Edit work details", edit_work_path(@work)
+%p= link_to "Delete work", @work, :method => "delete", data: { confirm: "Are You sure?" }
 %table.table.table-hover
   %thead
     %tr

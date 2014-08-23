@@ -46,4 +46,16 @@ class WorksController < ApplicationController
     end
   end
   
+  #Delete Work details
+  def destroy
+    @work = Work.find(params[:id])
+    if @work.destroy
+      flash[:notice] = "Work deleted Successfully"
+      redirect_to @work
+    else
+      flash[:notice] = "Error in deleting the Work"
+      redirect_to @work
+    end
+  end
+
 end

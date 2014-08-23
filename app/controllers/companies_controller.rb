@@ -47,6 +47,7 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
   end
 
+  #Update company records
   def update
     @company = Company.find(params[:id])
     if @company.update(params[:company].permit(:name))
@@ -54,6 +55,18 @@ class CompaniesController < ApplicationController
       redirect_to @company
     else
       render 'edit'
+    end
+  end
+
+  #Delete company record
+  def destroy
+    @company = Company.find(params[:id])
+    if @company.destroy
+      flash[:notice] = "Company deleted Successfully"
+      redirect_to @company
+    else
+      flash[:notice] = "Error in deleting the Company"
+      redirect_to @company
     end
   end
 

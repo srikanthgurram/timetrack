@@ -4,6 +4,7 @@
 %h4 Compnay Details
 %hr
 %p= link_to "Edit Company", edit_company_path(@company)
+%p= link_to "Delete Company", @company, :method => "delete", data: { confirm: "Are You sure?" }
 %p
   %strong Company Name:
   = @company.name

@@ -3,14 +3,14 @@
     %p Please fix the following #{pluralize(@work.errors.count, "error")}:
     %ul
       - @work.errors.full_messages.each do |msg|
-      %li= msg
+        %li= msg
 
-%h1 Edit work details
+%h1= (@work.new_record? ? "Add work details" : "Edit work details")
 .row
   .span6.offset3
     = form_for(@work) do |w|
       %div{:style => "padding: 5px"}
-        = w.label :employee_id, 'Employee Name'
+        = w.label :employee_id, 'Employee Name'            
         = w.collection_select(:employee_id, Employee.all.order('first_name, last_name'), :id, :to_s, prompt: true)
       %div{:style => "padding: 5px"}
         = w.label :project_id, 'Project Name'
@@ -23,7 +23,7 @@
         = w.select(:work_hours, [1,2,3,4,5,6,7,8], prompt: true)
       %div{:style => "padding: 5px; margin: 10px"}
         = w.label :work_details
-        %br
+        %br              
         = w.text_area(:work_details, size: '60x20', :placeholder => "Enter work details" )
-      %div{:style => "padding: 5px; margin: 10px 0 15px 0"}
-        = w.submit "Update", class: "btn btn-large btn-primary"
+      %div{:style => "padding: 5px; margin: 10px   0 15px 0"}
+        = w.submit (@work.new_record? ? "Add" : "Update"), class: "btn btn-large btn-primary"

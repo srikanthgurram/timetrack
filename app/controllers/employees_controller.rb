@@ -62,4 +62,17 @@ class EmployeesController < ApplicationController
 			render 'edit'
 		end
 	end
+
+	#Delete Employee record
+	def destroy
+    @employee = Employee.find(params[:id])
+    if @employee.destroy
+      flash[:notice] = "Employee deleted Successfully"
+      redirect_to @employee
+    else
+      flash[:notice] = "Error in deleting the Employee"
+      redirect_to @employee
+    end
+  end
+
 end

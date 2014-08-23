@@ -47,4 +47,17 @@ class ClientsController < ApplicationController
         render 'edit'
       end
     end
+
+    #Delete company records
+    def destroy
+    @client = Client.find(params[:id])
+    if @client.destroy
+      flash[:notice] = "Client deleted Successfully"
+      redirect_to @client
+    else
+      flash[:notice] = "Error in deleting the Client"
+      redirect_to @client
+    end
+  end
+
 end

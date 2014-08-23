@@ -5,7 +5,7 @@
     - @project.errors.full_messages.each do |msg|
       %li= msg
 
-%h1 Edit Company details
+%h1= (@project.new_record? ? "Add new Project" : "Update Project")
 .row
   .span6.offset3
     = form_for(@project) do |p|
@@ -22,4 +22,4 @@
         = p.label :client_id
         = p.collection_select(:client_id, Client.all.order('name'), :id, :name, prompt: true)
       %div
-        = p.submit "Update", class: "btn btn-large btn-primary"
+        = p.submit (@project.new_record? ? "Add" : "Update"), class: "btn btn-large btn-primary"
