@@ -1,4 +1,6 @@
 class Employee < ActiveRecord::Base
+	before_save :downcase_username
+
 	#add associations
 	belongs_to :company
 	has_many :works
@@ -18,4 +20,10 @@ class Employee < ActiveRecord::Base
 	def to_s
 		first_name+" "+last_name
 	end
+
+	#Convert username to lowercase
+	private
+		def downcase_username
+			self.username = self.username.downcase
+		end
 end
