@@ -12,8 +12,8 @@
       %div
         = c.label :name, 'Client Name'
         = c.text_field :name
-    %div
+      %div
         = c.label :company_id
         = c.collection_select(:company_id, Company.all.order('name'), :id, :name, prompt: true)
-    %div
+      %div
         = c.submit (@client.new_record? ? "Add" : "Update"), class: "btn btn-large btn-primary"
