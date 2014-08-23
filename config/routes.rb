@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :clients
   resources :employees
   resources :works
+  resources :contacts
 
   # Example resource route with options:
   #   resources :products do

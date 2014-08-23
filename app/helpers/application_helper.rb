@@ -27,8 +27,8 @@ module ApplicationHelper
 		},
 		{
 			displayname: "Contact Us",
-			controllername: 'contactus',
-			linkurl: 'contactus_path'
+			controllername: 'contacts',
+			linkurl: 'contacts'
 		}
 
 
